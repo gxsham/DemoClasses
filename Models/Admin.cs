@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DemoClasses
 {
-	public sealed class Admin : Author
+	public sealed class Admin : Author, IEncryptable
 	{
 
 		private string password { get; set;  }
@@ -23,16 +24,16 @@ namespace DemoClasses
 		public override string GetRights() => $"{base.GetRights()} Admin";
 
 
-		internal string GetEncryptedPassword() => SetEncryptedPassword(password);
+		public string GetEncryptedPassword() => SetEncryptedPassword(password);
 
 
-		internal string GetEncryptedPassword(int key) => SetEncryptedPassword($"{password}{key}");
+		public string GetEncryptedPassword(int key) => SetEncryptedPassword($"{password}{key}");
 
 
-		internal string GetEncryptedPassword(int key, string offset) => SetEncryptedPassword($"{password}{key}{offset}");
+		public string GetEncryptedPassword(int key, string offset) => SetEncryptedPassword($"{password}{key}{offset}");
 		
 
-		internal string SetEncryptedPassword(string password) => Encoding.ASCII.GetBytes(password).Aggregate(string.Empty, (a, b) => a + b);
+		public string SetEncryptedPassword(string password) => Encoding.ASCII.GetBytes(password).Aggregate(string.Empty, (a, b) => a + b);
 		
 	}
 

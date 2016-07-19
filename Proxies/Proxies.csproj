@@ -44,6 +44,10 @@
     <Compile Include="ProxyAdmin.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{e789716e-b383-4cc6-9d90-5cd2a544175c}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{e389a240-874e-4bae-865b-7c9fa143506d}</Project>
       <Name>Models</Name>

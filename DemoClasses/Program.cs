@@ -48,7 +48,7 @@ namespace DemoClasses
 			Console.WriteLine(decAuthorInfo);
 
 			ProxyAdmin ProxyAdmin = new ProxyAdmin("proxypassword");
-			Console.WriteLine(ProxyAdmin.GetRights());
+			Console.WriteLine(ProxyAdmin.GetEncryptedPassword());
 			Console.ReadKey();
 			
 

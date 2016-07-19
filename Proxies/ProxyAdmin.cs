@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DemoClasses
 {
-	public class ProxyAdmin
+	public class ProxyAdmin :IEncryptable
 	{
 		private Admin _admin;
 
@@ -15,10 +16,6 @@ namespace DemoClasses
 			_admin = new Admin(pass);
 		}
 
-		public string GetRights()
-		{
-			return _admin.GetRights();
-		}
 		public string GetEncryptedPassword()
 		{
 			return _admin.GetEncryptedPassword();
@@ -31,7 +28,8 @@ namespace DemoClasses
 		{
 			return _admin.GetEncryptedPassword(key, offset);
 		}
-		private string SetEncryptedPassword(string password)
+
+		public string SetEncryptedPassword(string password)
 		{
 			return _admin.SetEncryptedPassword(password);
 		}
