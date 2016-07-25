@@ -63,28 +63,6 @@ namespace DemoClasses
 			return $"{Name} {Surname} has {ArticlesNumber} articles.";
 		}
 
-		//Dispose
-		//public void Dispose()
-		//{
-		//	Dispose(true);
-		//	GC.SuppressFinalize(this);
-		//}
-
-		//private void Dispose(bool disposer)
-		//{
-		//	if (disposer)
-		//	{
-
-		//	}
-		//	articlesList = null;
-		//	Name = null;
-		//	Surname = null;
-		//}
-
-		////finalize
-		//~Author()
-		//{
-		//	Dispose(false);
-		//}
+		
 	}
 }
